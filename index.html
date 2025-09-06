@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السيرة الذاتية | فريق الأنامل الرقمية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue: #3498db;
+            --purple: #9b59b6;
+            --black: #2c3e50;
+            --white: #ecf0f1;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+
+        body[dir="ltr"] {
+            direction: ltr;
+            text-align: left;
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--purple);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--white);
+            left: 0;
+            bottom: -5px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .language-toggle {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .language-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 100px;
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9));
+            text-align: center;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid var(--purple);
+            margin-bottom: 30px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--blue), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        section:nth-child(even) {
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--blue), var(--purple));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Works Section */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .work-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .work-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-placeholder {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .logo-placeholder img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* Team Section */
+        .team-info {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .team-name {
+            font-size: 2rem;
+            color: var(--blue);
+            margin-bottom: 20px;
+        }
+
+        .social-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .contact-item h3 {
+            margin-bottom: 15px;
+            color: var(--blue);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .works-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">سلمى<span>.</span>علاء</a>
+                <ul class="nav-links">
+                    <li><a href="#about">نبذة</a></li>
+                    <li><a href="#works">أعمالي</a></li>
+                    <li><a href="#team">الفريق</a></li>
+                    <li><a href="#contact">اتصل بي</a></li>
+                </ul>
+                <button class="language-toggle" id="languageToggle">EN</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-image">
+                    <img src="WhatsApp Image 2025-09-06 at 12.37.27 AM.jpeg" alt="الصورة الشخصية">
+                </div>
+                <h1 id="hero-title">سلمى علاء</h1>
+                <p id="hero-desc">عضوة قسم البرمجيات في فريق الأنامل الرقمية في مدرسة الشهيد مدحت طلعت، متعلمة HTML وأتعلم CSS حاليًا.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Works Section -->
+    <section id="works">
+        <div class="container">
+            <h2 class="section-title" id="works-title">الأعمال التي قمت بها</h2>
+            <div class="works-grid">
+                <div class="work-card">
+                    <div class="logo-placeholder">
+                        <img src="WhatsApp Image 2025-09-06 at 3.21.51 AM.jpeg" alt="شعار مدرسة الشهيد مدحت طلعت">
+                    </div>
+                    <h3 id="work1-title">مدرسة الشهيد مدحت طلعت</h3>
+                    <p id="work1-desc">المدرسة التي أدرس بها وأعمل ضمن فريقها البرمجي</p>
+                </div>
+                <div class="work-card">
+                    <div class="logo-placeholder">
+                        <img src="WhatsApp Image 2025-09-06 at 3.21.08 AM.jpeg" alt="شعار فريق الأنامل الرقمية">
+                    </div>
+                    <h3 id="work2-title">فريق الأنامل الرقمية</h3>
+                    <p id="work2-desc">فريق البرمجيات الذي أنتمي إليه وأطور مهاراتي من خلاله</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team">
+        <div class="container">
+            <h2 class="section-title" id="team-title">فريقي البرمجي</h2>
+            <div class="team-info">
+                <h3 class="team-name">فريق الأنامل الرقمية</h3>
+                <p id="team-desc">نحن فريق من الطلاب المتحمسين لتطوير مهاراتنا البرمجية وإنشاء مشاريع رقمية مبتكرة تحت إشراف مدرسة الشهيد مدحت طلعت.</p>
+                <a href="https://www.facebook.com/share/1CPPC2VEH4/" class="social-link" target="_blank" id="team-link">زيارة صفحة الفريق</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title" id="contact-title">وسائل التواصل</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3 id="phone-title">الهاتف</h3>
+                    <p>02845542520</p>
+                </div>
+                <div class="contact-item">
+                    <h3 id="email-title">البريد الإلكتروني</h3>
+                    <p>salmaalaa@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p id="footer-text">© 2025 جميع الحقوق محفوظة | سلمى علاء - فريق الأنامل الرقمية</p>
+        </div>
+    </footer>
+
+    <script>
+        // Language Toggle Functionality
+        const languageToggle = document.getElementById('languageToggle');
+        let isEnglish = false;
+        
+        // Arabic content
+        const arabicContent = {
+            heroTitle: 'سلمى علاء',
+            heroDesc: 'عضوة قسم البرمجيات في فريق الأنامل الرقمية في مدرسة الشهيد مدحت طلعت، متعلمة HTML وأتعلم CSS حاليًا.',
+            worksTitle: 'الأعمال التي قمت بها',
+            work1Title: 'مدرسة الشهيد مدحت طلعت',
+            work1Desc: 'المدرسة التي أدرس بها وأعمل ضمن فريقها البرمجي',
+            work2Title: 'فريق الأنامل الرقمية',
+            work2Desc: 'فريق البرمجيات الذي أنتمي إليه وأطور مهاراتي من خلاله',
+            teamTitle: 'فريقي البرمجي',
+            teamDesc: 'نحن فريق من الطلاب المتحمسين لتطوير مهاراتنا البرمجية وإنشاء مشاريع رقمية مبتكرة تحت إشراف مدرسة الشهيد مدحت طلعت.',
+            teamLink: 'زيارة صفحة الفريق',
+            contactTitle: 'وسائل التواصل',
+            phoneTitle: 'الهاتف',
+            emailTitle: 'البريد الإلكتروني',
+            footerText: '© 2025 جميع الحقوق محفوظة | سلمى علاء - فريق الأنامل الرقمية'
+        };
+        
+        // English content
+        const englishContent = {
+            heroTitle: 'Salma Alaa',
+            heroDesc: 'A member of the software department in the Digital Fingers Team at El-Shaheed Medhat Talaat School. I have learned HTML and currently learning CSS.',
+            worksTitle: 'My Works',
+            work1Title: 'El-Shaheed Medhat Talaat School',
+            work1Desc: 'The school where I study and work in its software team',
+            work2Title: 'Digital Fingers Team',
+            work2Desc: 'The software team I belong to and develop my skills through',
+            teamTitle: 'My Software Team',
+            teamDesc: 'We are a team of students enthusiastic about developing our programming skills and creating innovative digital projects under the supervision of El-Shaheed Medhat Talaat School.',
+            teamLink: 'Visit Team Page',
+            contactTitle: 'Contact Me',
+            phoneTitle: 'Phone',
+            emailTitle: 'Email',
+            footerText: '© 2025 All Rights Reserved | Salma Alaa - Digital Fingers Team'
+        };
+        
+        // Toggle language function
+        function toggleLanguage() {
+            isEnglish = !isEnglish;
+            
+            if (isEnglish) {
+                document.body.setAttribute('dir', 'ltr');
+                languageToggle.textContent = 'AR';
+                updateContent(englishContent);
+            } else {
+                document.body.setAttribute('dir', 'rtl');
+                languageToggle.textContent = 'EN';
+                updateContent(arabicContent);
+            }
+        }
+        
+        // Update content based on language
+        function updateContent(content) {
+            document.getElementById('hero-title').textContent = content.heroTitle;
+            document.getElementById('hero-desc').textContent = content.heroDesc;
+            document.getElementById('works-title').textContent = content.worksTitle;
+            document.getElementById('work1-title').textContent = content.work1Title;
+            document.getElementById('work1-desc').textContent = content.work1Desc;
+            document.getElementById('work2-title').textContent = content.work2Title;
+            document.getElementById('work2-desc').textContent = content.work2Desc;
+            document.getElementById('team-title').textContent = content.teamTitle;
+            document.getElementById('team-desc').textContent = content.teamDesc;
+            document.getElementById('team-link').textContent = content.teamLink;
+            document.getElementById('contact-title').textContent = content.contactTitle;
+            document.getElementById('phone-title').textContent = content.phoneTitle;
+            document.getElementById('email-title').textContent = content.emailTitle;
+            document.getElementById('footer-text').textContent = content.footerText;
+        }
+        
+        // Add event listener to language toggle button
+        languageToggle.addEventListener('click', toggleLanguage);
+    </script>
+</body>
+</html>
